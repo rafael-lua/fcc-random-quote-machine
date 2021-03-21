@@ -4,8 +4,8 @@ const Layout = (props) => {
   return (
     <div>
       <Meta />
-      <h1>HI, I WILL BE BECOME A HEADER!</h1>
       <main>
+        <h1 className="text-primary text-bold title-border ts-3">RANDOM QUOTE MACHINE</h1>
         {props.children}
       </main>
 

@@ -1,8 +1,9 @@
 
 
+// Main view and content
 export default function Home() {
   return (
-    <div>
+    <div id="quote-box">
       
     </div>
   )
