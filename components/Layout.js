@@ -5,7 +5,7 @@ const Layout = (props) => {
     <div>
       <Meta />
       <main>
-        <h1 className="text-primary text-bold title-border ts-3">RANDOM QUOTE MACHINE</h1>
+        <h1 className="text-primary text-bold title-border ts-3">RANDOM <em>"QUOTE"</em> MACHINE</h1>
         {props.children}
       </main>
 

@@ -44,17 +44,9 @@ main {
   width: 100%;
   height: 100vh;
   background-color: #367096;
-  background: -moz-linear-gradient(180deg, rgba(54,112,150,1) 0%, rgba(72,135,183,1) 100%);
-  background: -webkit-linear-gradient(180deg, rgba(54,112,150,1) 0%, rgba(72,135,183,1) 100%);
-  background: linear-gradient(180deg, rgba(54,112,150,1) 0%, rgba(72,135,183,1) 100%);
-}
-
-#quote-box {
-  width: 550px;
-  min-height: 300px;
-  background-color: #64ADC4;
-  border-radius: 1em;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  background: -moz-linear-gradient(180deg, rgba(54,112,150,1) 0%, rgba(143,219,197,1) 100%);
+  background: -webkit-linear-gradient(180deg, rgba(54,112,150,1) 0%, rgba(143,219,197,1) 100%);
+  background: linear-gradient(180deg, rgba(54,112,150,1) 0%, rgba(143,219,197,1) 100%);
 }
 
 .text-primary {
@@ -63,6 +55,7 @@ main {
 
 .text-bold {
   font-weight: 700;
+  word-spacing: 0.15em;
 }
 
 .title-border {
@@ -72,4 +65,14 @@ main {
 
 .ts-3 {
   font-size: 2.5em;
+}
+
+/* QUOTES STYLES */
+
+#quote-box {
+  width: 550px;
+  min-height: 300px;
+  background-color: #64ADC4;
+  border-radius: 1em;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }

@@ -1,6 +1,6 @@
 const Quote = () => {
   return (
-    <div>
+    <div id="quote-box">
       
     </div>
   )
