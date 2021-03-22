@@ -1,6 +1,11 @@
 import { connect } from "react-redux"; // Component will be exported through the connect
 
 const Quote = (props) => {
+  // Component local function to get a random quote from all the quotes passed on "props.quotes"
+  const getRandomQuote = () => {
+    
+  };
+
   return (
     <div id="quote-box">
       <div>
@@ -19,5 +24,8 @@ const Quote = (props) => {
 const mapStateToProps = (state) => {
   return state;
 }
+
+// Mapping dispatchs actions to the component props (https://react-redux.js.org/using-react-redux/connect-mapdispatch#defining-mapdispatchtoprops-as-an-object)
+
 
 export default connect(mapStateToProps, null)(Quote);
