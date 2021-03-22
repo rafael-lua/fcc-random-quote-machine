@@ -1,24 +1,21 @@
-import { Provider } from "react-redux";
-import store from "../store/storeConfig";
+//import { Provider } from "react-redux";
+//import store from "../store/storeConfig";
 import Quote from "../components/Quote";
-import { debugMsg, changeQuote } from "../store/quoteActions";
+//import { debugMsg, changeQuote } from "../store/quoteActions";
+
+//store.dispatch(debugMsg("Async finished!"));
 
 // Main view and content
 export default function Home(props) {
+  // <Provider store={ store }> </Provider>
   return (
-    <Provider store={ store }>
-      <Quote quotes={props.quotes} />
-    </Provider>
+    <Quote quotes={props.quotes} />
   )
 }
 
 export const getStaticProps = async () => {
   const res = await fetch("http://localhost:3000/api/quotes");
   const quotes = await res.json();
-
-  //store.dispatch(debugMsg("Async finished!"));
-
-  store.dispatch(changeQuote({text: "First quote", author: "Async"}));
 
   return {
     props: {

@@ -6,15 +6,16 @@ const quoteState = {
   author: "API SERVER"
 };
 
+
 const quoteReducer = (state = quoteState, action) => {
   switch(action.type) {
 
     case actions.CHANGE_QUOTE:
       // Create a new state with the new quote
-      let newState = {...state};
-      newState.text = action.quote.text;
-      newState.author = action.quote.author;
-      return newState;
+      return Object.assign({}, state, {
+        text: action.quote.text,
+        author: action.quote.author
+      });
 
     case actions.DEBUG:
       console.log("ACTION SENT! MESSAGE: " + action.msg);

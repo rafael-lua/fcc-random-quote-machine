@@ -1,16 +1,16 @@
-import { connect } from "react-redux"; // Component will be exported through the connect
+// import { connect } from "react-redux"; // Component will be exported through the connect
 
 const Quote = (props) => {
   // Component local function to get a random quote from all the quotes passed on "props.quotes"
   const getRandomQuote = () => {
-    
+
   };
 
   return (
     <div id="quote-box">
       <div>
-        <h2 id="text">QUOTE</h2>
-        <h3 id="author">BY AUTHOR</h3>
+        <h2 id="text">{props.text}</h2>
+        <h3 id="author">By {props.author}</h3>
       </div>
       <div>
         <hr/>
@@ -19,6 +19,10 @@ const Quote = (props) => {
     </div>
   )
 }
+
+export default Quote;
+
+/*
 
 // Mapping the state to the component props
 const mapStateToProps = (state) => {
@@ -29,3 +33,5 @@ const mapStateToProps = (state) => {
 
 
 export default connect(mapStateToProps, null)(Quote);
+
+*/
