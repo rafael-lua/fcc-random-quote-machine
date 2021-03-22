@@ -1,5 +1,5 @@
 // import { connect } from "react-redux"; // Component will be exported through the connect
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Quote = (props) => {
   const [quoteState, setQuoteState] = useState(
@@ -11,9 +11,18 @@ const Quote = (props) => {
 
   // Component local function to get a random quote from all the quotes passed on "props.quotes"
   const getRandomQuote = () => {
-    const newQuote = props.quotes[0];
+    let randId = Math.floor(Math.random() * props.quotes.length);
+    const newQuote = props.quotes[randId];
     setQuoteState({...quoteState, text: newQuote.text, author: newQuote.author});
   };
+
+  // First random quote through a effect. Pass an empty array so th effect happens only once.
+  // (https://reactjs.org/docs/hooks-effect.html#tip-optimizing-performance-by-skipping-effects)
+  // (https://css-tricks.com/run-useeffect-only-once/ or https://stackoverflow.com/questions/53120972/how-to-call-loading-function-with-react-useeffect-only-once)
+  useEffect(() => {
+    getRandomQuote();
+  }, []); // Only re-run the effect if these variables changes. Empty array will make so it runs only once.
+
 
   return (
     <div id="quote-box">
@@ -23,8 +32,11 @@ const Quote = (props) => {
       </div>
       <div>
         <hr/>
-        <div class="quote-bottom-wrapper">
-          <button id="new-quote" onClick={getRandomQuote} class="btn-main">New Quote</button>
+        <div className="quote-bottom-wrapper">
+          <button id="new-quote" onClick={getRandomQuote} className="btn-main">New Quote</button>
+          <div>
+            <a id="tweet-quote" href="#">T</a>
+          </div>
         </div>
       </div>
     </div>
