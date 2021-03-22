@@ -13,7 +13,7 @@ const Quote = (props) => {
 
   // Component local function to get a random quote from all the quotes passed on "props.quotes"
   const getRandomQuote = () => {
-    let randId = 0;
+    let randId = Math.floor(Math.random() * props.quotes.length);
     while(randId == quoteState.id) { randId = Math.floor(Math.random() * props.quotes.length); }
     const newQuote = props.quotes[randId];
     setQuoteState({...quoteState, id: newQuote.id, text: newQuote.text, author: newQuote.author});
