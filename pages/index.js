@@ -8,9 +8,11 @@ import Quote from "../components/Quote";
 // Main view and content
 export default function Home(props) {
   // <Provider store={ store }> </Provider>
+
   return (
     <Quote quotes={props.quotes} />
   )
+  
 }
 
 export const getStaticProps = async () => {
