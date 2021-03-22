@@ -1,5 +1,6 @@
 // import { connect } from "react-redux"; // Component will be exported through the connect
 import { useState, useEffect } from "react";
+import { FaTwitterSquare } from 'react-icons/fa'; // (https://github.com/react-icons/react-icons)
 
 const Quote = (props) => {
   const [quoteState, setQuoteState] = useState(
@@ -33,9 +34,9 @@ const Quote = (props) => {
       <div>
         <hr/>
         <div className="quote-bottom-wrapper">
-          <button id="new-quote" onClick={getRandomQuote} className="btn-main">New Quote</button>
+          <input type="button" value="New Quote" id="new-quote" onClick={getRandomQuote} />
           <div>
-            <a id="tweet-quote" href="#">T</a>
+            <a id="tweet-quote" href={"https://twitter.com/intent/tweet?text=a"}><FaTwitterSquare size="2em" /></a>
           </div>
         </div>
       </div>
