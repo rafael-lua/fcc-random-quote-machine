@@ -9,6 +9,7 @@ const Meta = (props) => {
       <meta charSet='utf-8' />
       <link rel='icon' href='/favicon.ico' />
       <title>{props.title}</title>
+      <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
     </Head>
   )
 }

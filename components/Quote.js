@@ -5,6 +5,7 @@ import { FaTwitterSquare } from 'react-icons/fa'; // (https://github.com/react-i
 const Quote = (props) => {
   const [quoteState, setQuoteState] = useState(
     {
+      id: -1,
       text: "Quotes are beautiful.",
       author: "Random Quote Machine"
     }
@@ -12,9 +13,10 @@ const Quote = (props) => {
 
   // Component local function to get a random quote from all the quotes passed on "props.quotes"
   const getRandomQuote = () => {
-    let randId = Math.floor(Math.random() * props.quotes.length);
+    let randId = 0;
+    while(randId == quoteState.id) { randId = Math.floor(Math.random() * props.quotes.length); }
     const newQuote = props.quotes[randId];
-    setQuoteState({...quoteState, text: newQuote.text, author: newQuote.author});
+    setQuoteState({...quoteState, id: newQuote.id, text: newQuote.text, author: newQuote.author});
   };
 
   // First random quote through a effect. Pass an empty array so th effect happens only once.
@@ -36,7 +38,7 @@ const Quote = (props) => {
         <div className="quote-bottom-wrapper">
           <input type="button" value="New Quote" id="new-quote" onClick={getRandomQuote} />
           <div>
-            <a id="tweet-quote" href={"https://twitter.com/intent/tweet?text=a"}><FaTwitterSquare size="2em" /></a>
+            <a target="_blank" id="tweet-quote" href={"https://twitter.com/intent/tweet?text=" + quoteState.text}><FaTwitterSquare size="2em"/></a>
           </div>
         </div>
       </div>
