@@ -31,7 +31,7 @@ const Quote = (props) => {
     <div id="quote-box">
       <div>
         <h2 id="text">{quoteState.text}</h2>
-        <h3 id="author">By {quoteState.author}</h3>
+        <h3 id="author">BY {quoteState.author.toUpperCase()}</h3>
       </div>
       <div>
         <hr/>
