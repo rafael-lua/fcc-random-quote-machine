@@ -1,14 +1,14 @@
 export const quotes = [
   {
-    quoteText: "A quote 1",
-    quoteAuthor: "An author 1"
+    text: "A quote 1",
+    author: "An author 1"
   },
   {
-    quoteText: "A quote 2",
-    quoteAuthor: "An author 2"
+    text: "A quote 2",
+    author: "An author 2"
   },
   {
-    quoteText: "A quote 3",
-    quoteAuthor: "An author 3"
+    text: "A quote 3",
+    author: "An author 3"
   },
 ];
